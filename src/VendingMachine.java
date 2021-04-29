@@ -15,7 +15,7 @@ public class VendingMachine {
 		System.out.println("Welcome, this vending machine only accepts $1 bills. Type the amount of money you'd to like enter.");
 		Scanner _input = new Scanner(System.in);
 		int _balance = _input.nextInt();
-		System.out.println("Press the number corresponding to the snack of your _selection.");
+		System.out.println("Press the number corresponding to the snack of your selection.");
 		System.out.println("Our snack selection goes as followed: Chips[1], Soda[2], Candy[3], Water[4], Gum[5], and Cookies[6]");
 		int _selection = _input.nextInt();
 		if ((_selection == 1) && (_balance < _chips.getPrice())) {
