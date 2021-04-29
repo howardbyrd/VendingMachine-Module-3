@@ -12,7 +12,7 @@ public class VendingMachine {
 		Boolean _confirmed = false;
 		int _change = 0;
 
-		System.out.println("This vending machine only accepts $1 bills. Type the amount of money you'd to like enter.");
+		System.out.println("Welcome, this vending machine only accepts $1 bills. Type the amount of money you'd to like enter.");
 		Scanner _input = new Scanner(System.in);
 		int _balance = _input.nextInt();
 		System.out.println("Press the number corresponding to the snack of your _selection.");
@@ -67,12 +67,12 @@ public class VendingMachine {
 			System.out.println("If you'd like to confirm your order press 1 otherwise press 2.");
 			int _option = _input.nextInt();
 			if (_option == 1) {
-				System.out.println("Your order is confirmed. Your change is $" + _change + ".");
+				System.out.println("Thank you for your transaction. Your order is confirmed. Your change is $" + _change + ".");
 				_input.close();
 				_confirmed = true;
 			}
 			else if (_option == 2) {
-				System.out.println("You have cancelled your order. You have a refund of $" + _balance + ".");
+				System.out.println("Thank you for your transaction. You have cancelled your order. You have a refund of $" + _balance + ".");
 				_input.close();
 				_confirmed = true;
 			}
