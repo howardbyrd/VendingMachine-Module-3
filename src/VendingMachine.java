@@ -11,13 +11,14 @@ public class VendingMachine {
 		Snack _water = new Snack(4);
 		Boolean _confirmed = false;
 		int _change = 0;
-
+// Vending machine asks for basic inputs for the money the user wants to insert and the item the user wants to buy.
 		System.out.println("Welcome, this vending machine only accepts $1 bills. Type the amount of money you'd to like enter.");
 		Scanner _input = new Scanner(System.in);
 		int _balance = _input.nextInt();
 		System.out.println("Press the number corresponding to the snack of your selection.");
 		System.out.println("Our snack selection goes as followed: Chips[1], Soda[2], Candy[3], Water[4], Gum[5], and Cookies[6]");
 		int _selection = _input.nextInt();
+// If there are insufficient funds the program will ask the user to insert additional money
 		if ((_selection == 1) && (_balance < _chips.getPrice())) {
 			System.out.println("Insufficient funds. Add additional $1 bills.");
 			int _extraMoney = _input.nextInt();
@@ -48,7 +49,7 @@ public class VendingMachine {
 			int _extraMoney = _input.nextInt();
 			_balance+= _extraMoney;
 		}
-
+//Subtracts the price of the item from the balance to give the user the proper change.
 		switch(_selection) {
 		case 1: _change = _balance - _chips.getPrice();
 		break;
@@ -63,6 +64,7 @@ public class VendingMachine {
 		case 6: _change = _balance - _cookies.getPrice();
 		break;	
 		}
+// A while loop that will continue until the user chooses to confirm or cancel their order.
 		while (_confirmed == false)  {
 			System.out.println("If you'd like to confirm your order press 1 otherwise press 2.");
 			int _option = _input.nextInt();
